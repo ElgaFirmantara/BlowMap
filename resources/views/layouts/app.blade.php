@@ -147,6 +147,10 @@
                             <a class="nav-link {{ request()->is('lokasi') ? 'active' : '' }}"
                                 href="{{ url('/lokasi') }}">WebGIS</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->is('pengembang') ? 'active' : '' }}"
+                                href="{{ url('/pengembang') }}">Pengembang</a>
+                        </li>
                     </ul>
                 </div>
             </div>

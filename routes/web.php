@@ -11,6 +11,8 @@ use App\Http\Controllers\AnggotaKeluargaController;
 // Welcome (opsional)
 Route::view('/', 'welcome')->name('welcome');
 
+Route::view('/pengembang', 'pengembang')->name('pengembang');
+
 Route::get('/dashboard', function () {
     $totalLokasi = Lokasi::count();
     $totalKartuKeluarga = KartuKeluarga::count();
