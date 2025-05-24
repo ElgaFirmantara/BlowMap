@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AnggotaKeluarga;
+use App\Models\KartuKeluarga;
 use App\Models\Lokasi;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -47,7 +48,16 @@ class LokasiController extends Controller
         return view('lokasi.edit', compact('lokasi'));
     }
 
+    public function show($id)
+    {
+        $lokasi = Lokasi::findOrFail($id);
 
+        $kartuKeluargas = KartuKeluarga::with('anggotaKeluargas')
+            ->where('lokasi_id', $id)
+            ->get();
+
+        return view('lokasi.index', compact('lokasi'));
+    }
 
     public function update(Request $request, $id)
     {
