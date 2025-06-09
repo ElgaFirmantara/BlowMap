@@ -229,9 +229,16 @@
             <p class="welcome-subtitle">
                 Kelola data lokasi, kartu keluarga, dan anggota keluarga dengan mudah dan cepat.
             </p>
-            <a href="{{ route('dashboard') }}" class="btn btn-welcome">
-                <i class="fas fa-sign-in-alt me-2"></i> Masuk
-            </a>
+            <div class="vstack gap-3 col-12 col-md-8 mx-auto">
+                <a href="{{ route('login') }}" class="btn btn-welcome">
+                    <i class="fas fa-sign-in-alt me-2"></i> login
+                </a>
+                <a href="{{ route('register') }}" class="btn btn-welcome"
+                    style="background: linear-gradient(135deg, #ff7e5f 0%, #ffb88c 100%);">
+                    <i class="fas fa-user-plus me-2"></i> regis
+                </a>
+            </div>
+
             <div class="footer">
                 &copy; {{ date('Y') }} BlowMap. All rights reserved.
             </div>

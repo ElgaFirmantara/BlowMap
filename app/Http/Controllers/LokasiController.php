@@ -16,6 +16,14 @@ class LokasiController extends Controller
         return view('lokasi.index', compact('lokasi'));
     }
 
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        $lokasi = Lokasi::where('nama_lokasi', 'like', '%' . $keyword . '%')->get();
+        return view('lokasi.index', compact('lokasi'));
+    }
+
+
 
     public function create()
     {

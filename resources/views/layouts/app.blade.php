@@ -129,7 +129,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-custom mb-4">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/dashboard') }}">
                     <img src="{{ asset('images/logo-dashboard.png') }}" alt="Logo BlowMap"
                         style="height: 40px; margin-right: 5px;">
                     BlowMap
@@ -151,7 +151,19 @@
                             <a class="nav-link {{ request()->is('pengembang') ? 'active' : '' }}"
                                 href="{{ url('/pengembang') }}">Pengembang</a>
                         </li>
+                        @auth
+                            <li class="nav-item">
+                                <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                                    @csrf
+                                    <button type="submit" class="nav-link btn btn-link text-white"
+                                        style="text-decoration:none; padding:0.5rem 1rem;">
+                                        <i class="fas fa-sign-out-alt me-1"></i>Logout
+                                    </button>
+                                </form>
+                            </li>
+                        @endauth
                     </ul>
+
                 </div>
             </div>
         </nav>

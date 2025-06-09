@@ -7,9 +7,16 @@ use App\Models\AnggotaKeluarga;
 use App\Http\Controllers\LokasiController;
 use App\Http\Controllers\KartuKeluargaController;
 use App\Http\Controllers\AnggotaKeluargaController;
+use App\Http\Controllers\AuthController;
 
-// Welcome (opsional)
 Route::view('/', 'welcome')->name('welcome');
+
+Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('login', [AuthController::class, 'login'])->name('login.action');
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('register', [AuthController::class, 'showRegisterForm'])->name('register');
+Route::post('register', [AuthController::class, 'register'])->name('actionregister');
 
 Route::view('/pengembang', 'pengembang')->name('pengembang');
 
@@ -29,6 +36,9 @@ Route::get('/kartu-keluarga/list', function () {
     $daftarKK = KartuKeluarga::with(['lokasi', 'anggotaKeluargas'])->get();
     return view('kartu-keluarga.list', compact('daftarKK'));
 })->name('kartu-keluarga.list');
+
+Route::get('/lokasi/search', [LokasiController::class, 'search'])->name('lokasi.search');
+
 
 
 // Resource Routes

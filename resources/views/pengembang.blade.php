@@ -387,7 +387,7 @@
                     <h3 class="developer-name">Nicholas Benua Audlen Putra</h3>
                     <div class="developer-nim">H1101231042</div>
                     <div class="developer-social">
-                        <a href="https://www.instagram.com/ad_ptra1/" target="_blank" title="Instagram Nicholas"><i
+                        <a href="https://www.instagram.com/jokowi/" target="_blank" title="Instagram Nicholas"><i
                                 class="fab fa-instagram"></i></a>
                     </div>
                 </div>

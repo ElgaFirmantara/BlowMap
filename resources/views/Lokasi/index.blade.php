@@ -3,10 +3,24 @@
 @section('content')
     <div class="container">
         <!-- Tombol Mulai -->
-        <button id="btn-mulai" class="btn btn-primary mb-3 shadow-sm"
-            style="border-radius: 30px; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); padding: 10px 24px; font-weight: 600;">
-            <i class="fas fa-plus-circle me-2"></i> Tambah Data
-        </button>
+        <div class="row align-items-center mb-3">
+            <div class="col-auto">
+                <button id="btn-mulai" class="btn btn-primary shadow-sm"
+                    style="border-radius: 30px; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); padding: 10px 24px; font-weight: 600;">
+                    <i class="fas fa-plus-circle me-2"></i> Tambah Data
+                </button>
+            </div>
+            <div class="col">
+                <form action="{{ route('lokasi.search') }}" method="GET" class="d-flex justify-content-end">
+                    <input type="text" name="keyword" class="form-control me-2" placeholder="Cari nama lokasi..."
+                        value="{{ request('keyword') }}" style="max-width: 250px;">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Cari
+                    </button>
+                </form>
+            </div>
+        </div>
+
 
         <!-- Map Container -->
         <div id="map" class="shadow-lg rounded-4" style="height: 500px; margin-bottom: 24px; border: none;"></div>
